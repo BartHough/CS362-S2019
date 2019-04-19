@@ -642,6 +642,18 @@ int getCost(int cardNumber)
 	
   return -1;
 }
+int smithyFxn(int currentPlayer, struct gameState *state, int handPos){
+      //+3 Cards
+      for (i = 0; i < 3; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
+			
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+      return 0;
+	
+}	
 int adventurerFxn(int drawntreasure, struct gameState *state, int currentPlayer, int cardDrawn, int* temphand, int z){
   while(drawntreasure<2){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck                                                           
@@ -683,8 +695,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     nextPlayer = 0;
   }
   if(card == adventurer){
-    adventurerFxn(drawntreasure, state, currentPlayer, cardDrawn, temphand, z);
-    return 0;
+    return adventurerFxn(drawntreasure, state, currentPlayer, cardDrawn, temphand, z);
+  }
+  if(card == smithy){
+    return smithyFxn(currentPlayer, state, handPos);	  
   }
 
   //uses switch to select card and perform actions
@@ -852,7 +866,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
 
       return 0;
-		
+/*		
     case smithy:
       //+3 Cards
       for (i = 0; i < 3; i++)
@@ -863,7 +877,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
-		
+*/		
     case village:
       //+1 Card
       drawCard(currentPlayer, state);
