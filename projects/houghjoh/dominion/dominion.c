@@ -644,7 +644,7 @@ int getCost(int cardNumber)
 }
 int smithyFxn(int currentPlayer, struct gameState *state, int handPos){
       //+3 Cards
-      for (int i = 0; i < 3; i++)
+      for (int i = 0; i <= 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -655,7 +655,7 @@ int smithyFxn(int currentPlayer, struct gameState *state, int handPos){
 	
 }	
 int adventurerFxn(int drawntreasure, struct gameState *state, int currentPlayer, int cardDrawn, int* temphand, int z){
-  while(drawntreasure<2){
+  while(drawntreasure<4){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck                                                           
       shuffle(currentPlayer, state);
     }
@@ -677,19 +677,19 @@ int adventurerFxn(int drawntreasure, struct gameState *state, int currentPlayer,
 }
 
 int gardenFxn(){
-	return -1;	
+  return 0;	
 }	
 
 int villageFxn(int currentPlayer, struct gameState *state, int handPos){
-	//+1 Card
-	drawCard(currentPlayer, state);
+  //+1 Card
+  drawCard(currentPlayer, state);
 			
-	//+2 Actions
-	state->numActions = state->numActions + 2;
+  //+2 Actions
+  state->numActions = state->numActions + 2;
 			
-	//discard played card from hand
+  //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
-	return 0;	
+  return 0;	
 }
 
 int greatHallFxn(int currentPlayer, struct gameState *state, int handPos){
@@ -729,17 +729,17 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     return smithyFxn(currentPlayer, state, handPos);	  
   }
 	
-	if(card == gardens){
-		return gardenFxn();
-	}
+  if(card == gardens){
+    return gardenFxn();
+  }
 	
-	if(card == village){
-	 	return int villageFxn(currentPlayer, state, handPos);
-	}
+  if(card == village){
+    return villageFxn(currentPlayer, state, handPos);
+  }
 	
-	if(card == great_hall){
-		return greatHallFxn(currentPlayer, state, handPos);
-	}
+  if(card == great_hall){
+    return greatHallFxn(currentPlayer, state, handPos);
+  }
 
   //uses switch to select card and perform actions
   switch( card ) 
