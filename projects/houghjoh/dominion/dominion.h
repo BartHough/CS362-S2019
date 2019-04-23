@@ -12,6 +12,14 @@
 
 /* http://dominion.diehrstraits.com has card texts */
 /* http://dominion.isotropic.org has other stuff */
+/*
+int greatHallFxn(int currentPlayer, struct gameState *state, int handPos);
+int villageFxn(int currentPlayer, struct gameState *state, int handPos);
+int gardenFxn();
+int adventurerFxn(int drawntreasure, struct gameState *state, int currentPlayer, int cardDra\
+		  wn, int* temphand, int z);
+int smithyFxn(int currentPlayer, struct gameState *state, int handPos);
+*/
 
 /* hand# means index of a card in current active player's hand */
 
