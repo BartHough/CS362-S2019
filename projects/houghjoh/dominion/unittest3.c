@@ -48,7 +48,6 @@ int main(){
   memcpy(&testG, &G, sizeof(struct gameState));
   int numActions = testG.numActions;
   numActions++;
-  numActions++;
   greatHallFxn(1, &testG, 1);
   printf("\nTesting that village function increases number of actions by two\n");
   printf("expected: %d ", numActions);
