@@ -16,10 +16,15 @@ testDrawCard: testDrawCard.c dominion.o rngs.o
 #########
 
 unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.c dominion.h rngs.o
-	echo "Result for running unittest1.c:" > unittestresults.out
+	echo "Result for running dominion.c tests:\n" > unittestresults.out
 	echo "unittest1.c" >> unittestresults.out
 	gcc -o unittest1 dominion.c unittest1.c rngs.o $(CFLAGS)
 	./unittest1 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+
+	echo "unittest2.c" >> unittestresults.out
+	gcc -o unittest2 dominion.c unittest2.c rngs.o $(CFLAGS)
+	./unittest2 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 
 

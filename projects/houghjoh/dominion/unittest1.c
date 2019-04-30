@@ -29,7 +29,7 @@ int main(){
   // initialize a game state and player cards
   initializeGame(numPlayers, k, seed, &G);
   memcpy(&testG, &G, sizeof(struct gameState));
-  
+   
   //Testing that the player draws a card
   int playerHandCount= testG.handCount[1];
   playerHandCount++;
@@ -44,8 +44,9 @@ int main(){
     printf("FAILED\n");
   }
 
+  //Testing the greathall function increasing the number of actions by one
   memcpy(&testG, &G, sizeof(struct gameState));
-  int numActions = testG.numActions++;
+  int numActions = testG.numActions;
   numActions++;
   greatHallFxn(1, &testG, 1);
   printf("\nTesting that greatHall function increases number of actions\n");
@@ -57,4 +58,39 @@ int main(){
   else{
     printf("FAILED\n");
   }
+
+   
+  //Testing that the player draws two cards
+  playerHandCount= testG.handCount[1];
+  playerHandCount++;
+  playerHandCount++;
+  greatHallFxn(1, &testG, 1);
+  greatHallFxn(1, &testG, 1);
+  printf("\ntesting hand count of greatHall function\n");
+  printf("expected: %d ", playerHandCount);
+  printf("got: %d \n", testG.handCount[1]);
+  if(playerHandCount == testG.handCount[1]){
+    printf("PASSED\n");
+  }
+  else{
+    printf("FAILED\n");
+  }
+
+  //Testing the greathall function increasing the number of actions by n
+  memcpy(&testG, &G, sizeof(struct gameState));
+  numActions = testG.numActions;
+  for(int i=0; i<35; i++){
+    numActions++;
+    greatHallFxn(1, &testG, 1);
+  }
+  printf("\nTesting that greatHall function increases number of actions\n");
+  printf("expected: %d ", numActions);
+  printf("got: %d \n", testG.numActions);
+  if(numActions == testG.numActions){
+    printf("PASSED\n");
+  }
+  else{
+    printf("FAILED\n");
+  }
+
 }
