@@ -27,6 +27,15 @@ unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c car
 	./unittest2 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 
+	echo "unittest3.c" >> unittestresults.out
+	gcc -o unittest3 dominion.c unittest3.c rngs.o $(CFLAGS)
+	./unittest3 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+
+	echo "unittest4.c" >> unittestresults.out
+	gcc -o unittest4 dominion.c unittest4.c rngs.o $(CFLAGS)
+	./unittest4 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out 
 
 badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 	gcc -o badTestDrawCard -g  badTestDrawCard.c dominion.o rngs.o $(CFLAGS)
