@@ -52,9 +52,9 @@ int main(){
   count--;
   smithyFxn(1, &testG, 1);
   printf("\nTesting that smithy function discards a card\n");
-  printf("expected: %d ", numActions);
-  printf("got: %d \n", testG.numActions);
-  if(numActions == testG.numActions){
+  printf("expected: %d ", count);
+  printf("got: %d \n", testG.handCount[1]);
+  if(count == testG.handCount[1]){
     printf("PASSED\n");
   }
   else{
@@ -84,12 +84,12 @@ int main(){
   count = testG.handCount[1];
   for(int i=0; i<35; i++){
     count--;
-    smithy(1, &testG, 1);
+    smithyFxn(1, &testG, 1);
   }
   printf("\nTesting that smithy function discards cards\n");
-  printf("expected: %d ", numActions);
-  printf("got: %d \n", testG.numActions);
-  if(numActions == testG.numActions){
+  printf("expected: %d ", count);
+  printf("got: %d \n", testG.handCount[1]);
+  if(count == testG.handCount[1]){
     printf("PASSED\n");
   }
   else{
