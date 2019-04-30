@@ -25,7 +25,7 @@ int main(){
   int numPlayers = 2;
   int temphand[MAX_HAND];
   int thisPlayer = 0;
-  int drawnTreasure = 0;
+  int drawntreasure = 0;
   struct gameState G, testG;
   int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
   // initialize a game state and player cards
@@ -80,11 +80,11 @@ int main(){
   //Testing the greathall function increasing the number of actions by n
   memcpy(&testG, &G, sizeof(struct gameState));
   numActions = testG.numActions;
-  int n=0;
+  n=0;
   for(int i=0; i<35; i++){
     numActions++;
     adventurerFxn(drawntreasure, &testG, 1, 3, temphand, 0);
-    n+= drawntreasure
+    n+= drawntreasure;
   }
   printf("\nTesting that adventurer function increases number of treasure cards\n");
   printf("expected: %d ", 35*4);
