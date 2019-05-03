@@ -58,9 +58,9 @@ int main(){
   adventurerFxn(drawntreasure, &testG, 1, 3, temphand, 0);
   printf("\ntesting suffle discards called in adventurer function\n");
 
-  printf("expected: less than %d ", playerHandCount);
-  printf("got: %d \n", testG.handCount[1]);
-  if(playerHandCount > testG.handCount[1]){
+  printf("expected: greater than %d ", 0);
+  printf("got: %d \n", testG.deckCount[1]);
+  if(testG.deckCount[1] > 0){
     printf("PASSED\n");
   }
   else{
