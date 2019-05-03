@@ -45,7 +45,7 @@ int main(){
     printf("FAILED\n");
   }
 
-  //Testing the greathall function increasing the number of actions by one
+  //Testing the adventurer function increasing the number of actions by one
   memcpy(&testG, &G, sizeof(struct gameState));
   int numActions = testG.numActions;
   numActions++;
@@ -77,7 +77,7 @@ int main(){
     printf("FAILED\n");
   }
 
-  //Testing the greathall function increasing the number of actions by n
+  //Testing the adventurer function increasing the number of actions by n
   memcpy(&testG, &G, sizeof(struct gameState));
   numActions = testG.numActions;
   n=0;
