@@ -33,11 +33,11 @@ int main(){
   
    
    
-     //Testing that numBuys increases
+  //Testing that numBuys increases
   int numBy=testG.numBuys;
   numBy++;
   cardEffect(8, choice1, choice2, choice3, &testG, handPos, &bonus)
-  printf("\ntesting that numbuys increases\n");
+    printf("\ntesting that numbuys increases\n");
   printf("expected: %d ", numBy);
   printf("got: %d \n", testG.numBuys);
   if(numBy == testG.numBuys){
@@ -47,7 +47,7 @@ int main(){
     printf("FAILED\n");
   }
   
-       //Testing that numBuys increases
+  //Testing that numBuys increases
   int numBy=testG.numBuys;
   for(int i=0; i<100; i++){
     numBy++;
@@ -79,7 +79,7 @@ int main(){
     printf("FAILED\n");
   }
   
-    //Same test but with different handPos
+  //Same test but with different handPos
   int numBy=testG.numBuys;
   for(int i=0; i<100; i++){
     numBy++;
