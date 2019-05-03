@@ -33,9 +33,9 @@ int main(){
   
    
    
-  //Testing that discard increases by the number of players (2)
+  //Testing that discard increases by the number of players (2) minus current player
   int discard=testG.discardCount[1];
-  discard+=2;
+  discard+=1;
   cardEffect(25, choice1, choice2, choice3, &testG, handpos, &bonus);
   printf("\ntesting that discard increases\n");
   printf("expected: %d ", discard);
@@ -52,7 +52,7 @@ int main(){
   for(int i=3; i <10; i++){
     initializeGame(i, k, seed, &G);
     discard=G.discardCount[1];
-    discard+=i;
+    discard+=(i-1);
     cardEffect(25, choice1, choice2, choice3, &G, handpos, &bonus);
     printf("expected: %d ", discard);
     printf("got: %d \n", G.discardCount[1]);
