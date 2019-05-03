@@ -52,7 +52,7 @@ int main(){
   for(int i=3; i <10; i++){
     initializeGame(i, k, seed, &G);
     discard=G.discardCount[1];
-    discard+=(i-1);
+    discard+=(i-2);
     cardEffect(25, choice1, choice2, choice3, &G, handpos, &bonus);
     printf("expected: %d ", discard);
     printf("got: %d \n", G.discardCount[1]);

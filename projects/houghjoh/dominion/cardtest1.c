@@ -49,7 +49,7 @@ int main(){
   
   //Testing that numBuys increases
   numBy=testG.numBuys;
-  for(int i=0; i<100; i++){
+  for(int i=0; i<50; i++){
     numBy++;
     cardEffect(8, choice1, choice2, choice3, &testG, handpos, &bonus);
   }

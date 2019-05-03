@@ -49,7 +49,7 @@ int main(){
   //Testing the smithy function discards card
   memcpy(&testG, &G, sizeof(struct gameState));
   int count = testG.handCount[1];
-  count--;
+  //count--;
   smithyFxn(1, &testG, 1);
   printf("\nTesting that smithy function discards a card\n");
   printf("expected: %d ", count);
