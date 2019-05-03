@@ -24,6 +24,7 @@ int main(){
   int seed = 10;
   int numPlayers = 2;
   int thisPlayer = 0;
+  int drawntreasure=0;
   struct gameState G, testG;
   int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
   // initialize a game state and player cards
