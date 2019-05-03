@@ -24,6 +24,7 @@ int main(){
   int seed = 10;
   int numPlayers = 2;
   int thisPlayer = 0;
+  int temphand[MAX_HAND];
   int drawntreasure=0;
   struct gameState G, testG;
   int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
@@ -36,6 +37,7 @@ int main(){
    
   //Testing that the player gets rid of cards on large scale
   printf("\ntesting decrementing hand count of adventurer function\n");
+  int playerHandCount;
   for(int i=0; i<5; i++){ 
     int playerHandCount= testG.handCount[1];
     adventurerFxn(drawntreasure, &testG, 1, 3, temphand, 0);
@@ -57,7 +59,7 @@ int main(){
   printf("\ntesting suffle discards called in adventurer function\n");
 
   printf("expected: less than %d ", playerHandCount);
-  printf("got: %d \n", testG.handCount[1])
+  printf("got: %d \n", testG.handCount[1]);
   if(playerHandCount > testG.handCount[1]){
     printf("PASSED\n");
   }
