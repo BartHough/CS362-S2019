@@ -62,36 +62,4 @@ int main(){
   else{
     printf("FAILED\n");
   }
-  
-  //Same test but with weird choice values
-  numBy=testG.numBuys;
-  for(int i=0; i<100; i++){
-    numBy++;
-    cardEffect(8, 150, -1, 100, &testG, handpos, &bonus);
-  }
-  printf("\ntesting that numbuys increases\n");
-  printf("expected: %d ", numBy);
-  printf("got: %d \n", testG.numBuys);
-  if(numBy == testG.numBuys){
-    printf("PASSED\n");
-  }
-  else{
-    printf("FAILED\n");
-  }
-  
-  //Same test but with different handPos
-  int numBy=testG.numBuys;
-  for(int i=0; i<100; i++){
-    numBy++;
-    cardEffect(8, choice1, choice2, choice3, &testG, 7, &bonus);
-  }
-  printf("\ntesting that numbuys increases\n");
-  printf("expected: %d ", numBy);
-  printf("got: %d \n", testG.numBuys);
-  if(numBy == testG.numBuys){
-    printf("PASSED\n");
-  }
-  else{
-    printf("FAILED\n");
-  }
-  
+}
