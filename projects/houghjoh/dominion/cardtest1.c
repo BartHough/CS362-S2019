@@ -36,7 +36,7 @@ int main(){
      //Testing that numBuys increases
   int numBy=testG.numBuys;
   numBy++;
-  cardEffect(8, choice1, choice2, choice3, &testG, handPos, &bonus)
+  cardEffect(8, choice1, choice2, choice3, &testG, handpos, &bonus;
   printf("\ntesting that numbuys increases\n");
   printf("expected: %d ", numBy);
   printf("got: %d \n", testG.numBuys);
@@ -48,10 +48,10 @@ int main(){
   }
   
        //Testing that numBuys increases
-  int numBy=testG.numBuys;
+  numBy=testG.numBuys;
   for(int i=0; i<100; i++){
     numBy++;
-    cardEffect(8, choice1, choice2, choice3, &testG, handPos, &bonus);
+    cardEffect(8, choice1, choice2, choice3, &testG, handpos, &bonus);
   }
   printf("\ntesting that numbuys increases\n");
   printf("expected: %d ", numBy);
@@ -64,10 +64,10 @@ int main(){
   }
   
   //Same test but with weird choice values
-  int numBy=testG.numBuys;
+  numBy=testG.numBuys;
   for(int i=0; i<100; i++){
     numBy++;
-    cardEffect(8, 150, -1, 100, &testG, handPos, &bonus);
+    cardEffect(8, 150, -1, 100, &testG, handpos, &bonus);
   }
   printf("\ntesting that numbuys increases\n");
   printf("expected: %d ", numBy);
@@ -80,7 +80,7 @@ int main(){
   }
   
     //Same test but with different handPos
-  int numBy=testG.numBuys;
+  numBy=testG.numBuys;
   for(int i=0; i<100; i++){
     numBy++;
     cardEffect(8, choice1, choice2, choice3, &testG, 7, &bonus);
