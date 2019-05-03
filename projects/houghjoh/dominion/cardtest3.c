@@ -42,9 +42,9 @@ int main(){
     int playerHandCount= testG.handCount[1];
     adventurerFxn(drawntreasure, &testG, 1, 3, temphand, 0);
   
-    printf("expected: less than %d ", playerHandCount);
+    printf("expected: less than or equal to %d ", playerHandCount);
     printf("got: %d \n", testG.handCount[1]);
-    if(playerHandCount > testG.handCount[1]){
+    if(playerHandCount >= testG.handCount[1]){
       printf("PASSED\n");
     }
     else{
