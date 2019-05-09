@@ -5,6 +5,7 @@
 
 char inputChar(){
   // TODO: rewrite this function
+  //Gets a random char with ascii value bewteen 0 and 127
   char ch = rand() %127;
 
   return ch;
@@ -12,38 +13,48 @@ char inputChar(){
 
 char *inputString(){
   // TODO: rewrite this function
+  //Setting size of string to fixed length of 6
   char str[6];
+  
+  //Set of all lowercase letters 
   const char charset[] = "abcdefghijklmnopqrstuvwxyz";
-  //int n;
+  
+  //Loops through all but the last letter in str
+  //randomly gets one of the letters in about a 3 letter range from the desired letters (reset)
   for (size_t n = 0; n < 5; n++) {
     int key;
+    
+    //first letter in str
     if(n==0){
+      //random from p to t
       key = rand() % (int) (sizeof charset - 7) + 15;
     }
+    //second letter in str
     else if(n==1){
+      //random from d to g
       key = rand() % 6 + 3;
     } 
+    //third letter
     else if(n==2){
+      //random from q to u
       key = rand() % (int)(sizeof charset - 6) + 16;
     }
+    //fourth letter
     else if(n==3){
+      //random from d to g 
       key = rand() % 6 + 3;
     } 
+    //fifth letter
     else{
+      //random from r to v
       key = rand() % (int) (sizeof charset - 5) + 17;
     }
-
-
-
     str[n] = charset[key];
   }
+  
+  //Last letter is always null terminator
   str[5] = '\0';
   
-  /*  int i;
-  for(i=0; i<5; i++){
-    str[i]=(char) rand()%122 + 97;
-  }
-  str[5] = '\0';*/
   return str;
 }
 
