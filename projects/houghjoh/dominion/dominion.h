@@ -23,8 +23,8 @@ int smithyFxn(int currentPlayer, struct gameState *state, int handPos);
 
 /* hand# means index of a card in current active player's hand */
 
-enum CARD
-  {curse = 0,
+;enum CARD{
+curse = 0,
    estate,
    duchy,
    province,

@@ -28,26 +28,34 @@ int main(){
   int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
   // initialize a game state and player cards
   initializeGame(numPlayers, k, seed, &G);
-  memcpy(&testG, &G, sizeof(struct gameState));
-   
+     
 
   //Randomly testing the greathall function increasing the number of actions
-  memcpy(&testG, &G, sizeof(struct gameState));
-  int numActions = testG.numActions;
-  testG.coins = rand() % 25+1;
-  testG.numPlayers = rand() % 10+1;
-  for(int i=0; i<35; i++){
-    numActions++;
-    greatHallFxn(1, &testG, 1);
+  int failedFlag=0;
+  for(int j=0; j< 10000; j++){ 
+    memcpy(&testG, &G, sizeof(struct gameState));
+    int numActions = testG.numActions;
+    testG.coins = rand() % 25+1;
+    testG.numPlayers = rand() % 10+1;
+    for(int i=0; i<35; i++){
+      numActions++;
+      greatHallFxn(1, &testG, 1);
+    }
+    //printf("\nTesting that greatHall function increases number of actions\n");
+    //printf("expected: %d ", numActions);
+    //printf("got: %d \n", testG.numActions);
+    if(numActions == testG.numActions){
+      continue;
+    }
+    else{
+      failedFlag=1;
+    }
   }
-  printf("\nTesting that greatHall function increases number of actions\n");
-  printf("expected: %d ", numActions);
-  printf("got: %d \n", testG.numActions);
-  if(numActions == testG.numActions){
-    printf("PASSED\n");
+  if(failedFlag ==1){
+    printf("TESTFAILED\n");
   }
   else{
-    printf("FAILED\n");
+    printf("TESTSPASSED\n");
   }
 
 }

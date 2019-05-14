@@ -1,5 +1,5 @@
-/* -----------------------------------------------------------------------
- * Random test for refactored adventurer card 
+B/* -----------------------------------------------------------------------
+ 1;95;0c* Random test for refactored adventurer card 
  * -----------------------------------------------------------------------
  */
 
@@ -29,27 +29,34 @@ int main(){
   int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
   // initialize a game state and player cards
   initializeGame(numPlayers, k, seed, &G);
-  memcpy(&testG, &G, sizeof(struct gameState));
-   
-
 
   //Testing the adventurer function increasing the number of actions by n
-  memcpy(&testG, &G, sizeof(struct gameState));
-  numActions = testG.numActions;
-  n=0;
-  for(int i=0; i<35; i++){
-    numActions++;
-    adventurerFxn(drawntreasure, &testG, 1, 3, temphand, 0);
-    n+= drawntreasure;
+  int failedFlag=0;
+
+  for(int j=0; j<10000; j++){
+    memcpy(&testG, &G, sizeof(struct gameState));
+    int numActions = testG.numActions;
+    int n=0;
+    for(int i=0; i<35; i++){
+      numActions++;
+      adventurerFxn(drawntreasure, &testG, 1, 3, temphand, 0);
+      n+= drawntreasure;
+    }
+    //printf("\nTesting that adventurer function increases number of treasure cards\n");
+    //printf("expected: %d ", 35*4);
+    //printf("got: %d \n", n);
+    if(n == (35*4)){
+      continue;
+    }
+    else{
+      failedFlag=1;
+    }
   }
-  printf("\nTesting that adventurer function increases number of treasure cards\n");
-  printf("expected: %d ", 35*4);
-  printf("got: %d \n", n);
-  if(n == (35*4)){
-    printf("PASSED\n");
+  if(failedFlag == 1){
+    printf("TESTS FAILED\n");
   }
   else{
-    printf("FAILED\n");
+    printf("TESTS PASSED\n");
   }
 
 }
