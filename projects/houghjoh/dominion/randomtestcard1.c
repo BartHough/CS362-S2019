@@ -1,5 +1,5 @@
 /* -----------------------------------------------------------------------
- * Unit test 1/
+ * random card test 1
  * Testing the refactored "Great Hall" card function, called "GreathallFxn" 
  * -----------------------------------------------------------------------
  */
