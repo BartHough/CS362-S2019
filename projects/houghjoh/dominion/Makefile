@@ -15,18 +15,23 @@ testDrawCard: testDrawCard.c dominion.o rngs.o
 
 #########
 randomtestresults: randomtestcard1.c randomtestcard2.c randomtestadventurer.c dominion.c dominion.o
-	echo "Random test results:\n" > randomtestresults.out
-	echo "randomtestcard1.c\n" >> randomtestresults.out
+	
+	echo "Random test results:" > randomtestresults.out
+	echo "randomtestcard1.c testing the GREAT HALL function" >> randomtestresults.out
 	gcc -o randotest1 randomtestcard1.c dominion.o rngs.o $(CFLAGS)
 	-./randotest1 >> randomtestresults.out
 	gcov -bf dominion.c >> randomtestresults.out
 
-	echo "Randomtestcard2.c\n" >> randomtestresults.out
+	echo >> randomtestresults.out
+	echo "----------------------------------------------------------" >> randomtestresults.out
+	echo "Randomtestcard2.c testing the VILLAGE function" >> randomtestresults.out
 	gcc -o randotest2 randomtestcard2.c dominion.o rngs.o $(CFLAGS)
 	-./randotest2 >> randomtestresults.out
 	gcov -bf dominion.c >> randomtestresults.out
 
-	echo "Randomtestadventurer.c\n" >> randomtestresults.out
+	echo >> randomtestresults.out
+	echo "----------------------------------------------------------" >> randomtestresults.out
+	echo "Randomtestadventurer.c" >> randomtestresults.out
 	gcc -o randoadv randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
 	-./randoadv >> randomtestresults.out
 	gcov -bf dominion.c >> randomtestresults.out
