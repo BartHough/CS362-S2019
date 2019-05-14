@@ -37,9 +37,10 @@ int main(){
     int numActions = testG.numActions;
     testG.coins = rand() % 25+1;
     testG.numPlayers = rand() % 10+1;
+    int curPlayer = rand() % testG.numPlayers +1;
     for(int i=0; i<35; i++){
       numActions++;
-      greatHallFxn(1, &testG, 1);
+      greatHallFxn(curPlayer, &testG, 1);
     }
     //printf("\nTesting that greatHall function increases number of actions\n");
     //printf("expected: %d ", numActions);
