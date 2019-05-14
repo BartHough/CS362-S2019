@@ -1,5 +1,5 @@
 /* -----------------------------------------------------------------------
- * Unit test 3/
+ * Random card test 2
  * Testing the refactored "village" card function, called "villageFxn" 
  * -----------------------------------------------------------------------
  */
@@ -37,10 +37,12 @@ int main(){
     int numActions = testG.numActions;
     testG.phase = rand() % 10+1;
     testG.coins = rand() % 15 + 1;
+    testG.numPlayers = rand() % 10+1;
+    int curPlayer = rand() % testG.numPlayers +1;
     for(int i=0; i<35; i++){
       numActions++;
       numActions++;
-      villageFxn(1, &testG, 1);
+      villageFxn(curPlayer, &testG, 1);
     }
     //printf("\nTesting that village function increases number of actions\n");
     //printf("expected: %d ", numActions);
