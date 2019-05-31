@@ -1,0 +1,165 @@
+Result for running dominion.c tests:\n
+unittest1.c
+
+testing hand count of greatHall function
+expected: 1 got: 0 
+FAILED
+
+Testing that greatHall function increases number of actions
+expected: 2 got: 2 
+PASSED
+
+testing hand count of greatHall function
+expected: 2 got: 0 
+FAILED
+
+Testing that greatHall function increases number of actions
+expected: 36 got: 36 
+PASSED
+File 'dominion.c'
+Lines executed:20.25% of 563
+Creating 'dominion.c.gcov'
+
+unittest2.c
+
+testing decrementing hand count of adventurer function
+expected: less than 0 got: 4 
+FAILED
+
+Testing that adventurer discards all cards in tempHand
+expected: tempHand to be empty got: 500 
+FAILED
+
+testing that the player gets rid of cards through many iterations function
+expected: less than4 got: 7 
+FAILED
+
+Testing that adventurer function increases number of treasure cards
+expected: 140 got: 0 
+FAILED
+File 'dominion.c'
+Lines executed:20.78% of 563
+Creating 'dominion.c.gcov'
+
+unittest3.c
+
+testing that player draws card in village card function
+expected: 1 got: 0 
+FAILED
+
+Testing that village function increases number of actions by two
+expected: 3 got: 3 
+PASSED
+
+testing player handcount in village function
+expected: 2 got: 0 
+FAILED
+
+Testing that village function increases number of actions
+expected: 71 got: 71 
+PASSED
+File 'dominion.c'
+Lines executed:20.25% of 563
+Creating 'dominion.c.gcov'
+
+unittest4.c
+
+testing that player draws three cards in smithy card function
+expected: 3 got: 3 
+PASSED
+
+Testing that smithy function discards a card
+expected: 0 got: 3 
+FAILED
+
+testing player handcount in smithy function
+expected: 9 got: 7 
+FAILED
+
+Testing that smithy function discards cards
+expected: -35 got: -25 
+FAILED
+File 'dominion.c'
+Lines executed:20.43% of 563
+Creating 'dominion.c.gcov'
+
+cardtest1.c
+
+testing that numbuys increases
+expected: 2 got: 2 
+PASSED
+
+testing that numbuys increases
+expected: 52 got: 39 
+FAILED
+File 'dominion.c'
+Lines executed:23.45% of 563
+Creating 'dominion.c.gcov'
+
+cardtest2.c
+
+testing that discard increases
+expected: 1 got: 1 
+PASSED
+
+testing that discard increases
+expected: 1 got: 1 
+PASSED
+expected: 2 got: 1 
+FAILED
+expected: 4 got: 2 
+FAILED
+expected: 6 got: 3 
+FAILED
+expected: 8 got: 4 
+FAILED
+expected: 10 got: 5 
+FAILED
+expected: 12 got: 6 
+FAILED
+File 'dominion.c'
+Lines executed:20.43% of 563
+Creating 'dominion.c.gcov'
+
+cardtest3.c
+
+testing decrementing hand count of adventurer function
+expected: less than or equal to 0 got: 4 
+FAILED
+expected: less than or equal to 4 got: 7 
+FAILED
+expected: less than or equal to 7 got: 7 
+PASSED
+expected: less than or equal to 7 got: 7 
+PASSED
+expected: less than or equal to 7 got: 7 
+PASSED
+
+testing suffle discards called in adventurer function
+expected: greater than 0 got: 0 
+FAILED
+File 'dominion.c'
+Lines executed:20.78% of 563
+Creating 'dominion.c.gcov'
+
+cardtest4.c
+
+testing that players hand is decremented in smithy card function
+expected: -1 got: 4 
+FAILED
+
+testing that players hand is decremented in smithy card function
+expected: -1 got: 4 
+FAILED
+expected: 3 got: 4 
+FAILED
+expected: 3 got: 4 
+FAILED
+expected: 3 got: 4 
+FAILED
+expected: 3 got: 4 
+FAILED
+File 'dominion.c'
+Lines executed:20.07% of 563
+Creating 'dominion.c.gcov'
+
